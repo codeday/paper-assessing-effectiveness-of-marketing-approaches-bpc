@@ -1,0 +1,34 @@
+\pgfplotstableread[row sep=\\,col sep=&]{
+    theme & prevalence \\
+    product sense & 3 \\
+    curiosity & 4 \\
+    domain knowl. & 6 \\
+    tech. comm. & 6 \\
+    initiative & 10 \\
+    problem solving & 10 \\
+}\themesData
+
+\begin{figure}[]
+    \centering
+    \caption{Prevalence of themes in hiring manager agreements}
+    \label{fig:themesChart}
+    \hspace{0.6cm}
+    \begin{tikzpicture}
+        \begin{axis}[
+                xbar,
+                symbolic y coords={product sense,curiosity,domain knowl.,tech. comm.,initiative,problem solving},
+                ytick=data,
+                xmin=0,
+                xmax=12,
+                xlabel={Number of responses (out of 12)},
+                y=0.6cm,
+                width=7cm,
+                axis lines = left,
+                enlarge y limits={0.1},
+                nodes near coords={\pgfmathprintnumber\pgfplotspointmeta},
+                xticklabel={$\pgfmathprintnumber{\tick}$},
+                ]
+            \addplot [fill=black] table[x=prevalence,y=theme]{\themesData};
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}

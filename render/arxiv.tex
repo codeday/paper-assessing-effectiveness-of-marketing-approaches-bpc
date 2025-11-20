@@ -1,0 +1,37 @@
+\documentclass[sigconf]{acmart}
+\input{meta/packages}
+
+
+
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    \normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
+
+\acmConference[arXiv Pre-print]{arXiv Pre-print}{}{}
+\acmBooktitle{arXiv Pre-print}
+\settopmatter{printacmref=false}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+\makeatletter
+\renewcommand\@formatdoi[1]{\ignorespaces}
+\makeatother
+
+\begin{document}
+\fancyfoot{}
+\fancyhead{}
+\input{meta/title}
+\pagestyle{plain}
+\input{meta/authors}
+
+\begin{abstract}
+\input{00-abstract}
+\end{abstract}
+
+\maketitle
+\input{00-all}
+
+\bibliographystyle{format/ACM-Reference-Format}
+\balance
+\bibliography{tyler}
+
+\end{document}
+\endinput

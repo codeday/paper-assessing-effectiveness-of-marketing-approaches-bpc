@@ -1,0 +1,22 @@
+\usepackage{enumitem}
+\setlist{listparindent=1.25em}
+\usepackage[figuresright]{rotating}
+\usepackage{tabularx}
+\usepackage{balance}
+\usepackage{tikz}
+\usepackage{pgfplots,pgfplotstable}
+\usepgfplotslibrary{statistics}
+\usepackage{multirow}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\usetikzlibrary{shapes.geometric, arrows, positioning, patterns}
+\newcommand\identifying[1]{#1}
+
+\usepackage{newfloat}
+\DeclareFloatingEnvironment[
+    fileext=loa,
+    listname={List of Appendices},
+    name=Appendix,
+    placement={!ht},
+    within=none,
+]{floatappendix}
